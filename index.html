@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Cachila · Café, pizzas y parrilla en Marindia</title>
+  <meta name="description" content="La Cachila, multiespacio café resto en Marindia, Canelones, a la altura del km 41 de la Interbalnearia. Desayunos, meriendas, pizzas y parrilla. Reservá o pedí para llevar por WhatsApp.">
+  <!-- PROTOTIPO: borrar la línea "robots" cuando la web se publique con el dominio del local -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1b1a18">
+  <meta property="og:title" content="La Cachila · Café, pizzas y parrilla en Marindia">
+  <meta property="og:description" content="Mirá la carta, reservá tu mesa o pedí para llevar por WhatsApp.">
+  <meta property="og:image" content="img/compartir.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preload" href="css/fonts/big-shoulders.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="css/fonts/karla.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Cachila",
+    "description": "Multiespacio café resto: desayunos, meriendas, pizzas y parrilla.",
+    "servesCuisine": ["Parrilla", "Pizzas", "Cafetería"],
+    "telephone": "+598 96 651 131",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. del Coral 38",
+      "addressLocality": "Marindia",
+      "addressRegion": "Canelones",
+      "postalCode": "15100",
+      "addressCountry": "UY"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": -34.7722352, "longitude": -55.8192362 },
+    "sameAs": ["https://www.instagram.com/lacachilacaferesto/"]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="saltar" href="#carta">Ir a la carta</a>
+
+  <header class="header">
+    <div class="contenedor header-in">
+      <a href="#inicio" class="marca" aria-label="La Cachila, ir al inicio">
+        <img src="img/logo.png" alt="La Cachila" width="316" height="199">
+      </a>
+      <nav class="nav" id="nav" aria-label="Secciones">
+        <a href="#carta">La carta</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#lugar">El lugar</a>
+        <a href="#visita">Cómo llegar</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#reservas" class="btn btn-mostaza nav-cta">Reservar mesa</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- PORTADA -->
+    <section id="inicio" class="hero">
+      <div class="contenedor hero-in">
+        <div class="hero-txt">
+          <p class="etiqueta-seccion">Multiespacio · Café Resto · Marindia</p>
+          <h1>Café, pizzas y parrilla en Marindia</h1>
+          <p class="hero-lead">Desayunos y meriendas con medialunas rellenas y tostones de pan de campo. Al mediodía y a la noche, pizzas y parrilla para compartir. En el local o para llevar.</p>
+          <div class="hero-acciones">
+            <a href="#carta" class="btn btn-mostaza">Ver la carta</a>
+            <a href="#reservas" class="btn btn-borde">Reservar mesa</a>
+          </div>
+          <ul class="hero-datos">
+            <li><strong data-chapa-dia>Hoy:</strong> <span data-chapa-horario></span> · <span data-chapa-estado></span></li>
+            <li>Av. del Coral 38, a la altura del km 41 de la Interbalnearia</li>
+          </ul>
+        </div>
+        <div class="hero-foto">
+          <img src="img/salon.jpg" alt="Salón de La Cachila con mesas y sillas de madera y piso de damero" width="766" height="969">
+        </div>
+      </div>
+    </section>
+
+    <!-- CARTA -->
+    <section id="carta" class="seccion carta">
+      <div class="contenedor">
+        <header class="cab-seccion">
+          <div>
+            <h2>La carta</h2>
+            <p>Mirala antes de venir o armá tu pedido para retirar en el local: sumá o sacá platos con los botones + y −, y mandalo por WhatsApp. La hora de retiro y el pago se coordinan por ahí.</p>
+          </div>
+        </header>
+
+        <div class="pizarra">
+          <div class="momentos" role="tablist" aria-label="Momento del día" id="momentos"></div>
+          <div class="rubros" id="rubros" aria-label="Categorías"></div>
+          <div class="pizarra-cuerpo" id="carta-panel" aria-live="polite"></div>
+          <p class="pizarra-pie" data-solo-precios>Precios en pesos uruguayos, según la carta del local. Pueden cambiar: confirmalos al pedir.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVAS -->
+    <section id="reservas" class="seccion reservas">
+      <div class="contenedor reservas-in">
+        <div class="reservas-foto">
+          <img src="img/terraza.jpg" alt="Mesa de la terraza de La Cachila junto a la pantalla con la carta" loading="lazy" width="769" height="918">
+        </div>
+        <div class="reserva-caja">
+          <header class="cab-seccion">
+            <div>
+              <h2>Reservá tu mesa</h2>
+              <p>Completá los datos y te queda el mensaje listo para mandar por WhatsApp.</p>
+            </div>
+          </header>
+          <form id="reserva-form" class="reserva" novalidate>
+            <div class="reserva-grilla">
+              <div class="campo">
+                <label for="r-personas">Personas</label>
+                <select id="r-personas"></select>
+              </div>
+              <div class="campo">
+                <label for="r-dia">Día</label>
+                <select id="r-dia"></select>
+              </div>
+              <div class="campo">
+                <label for="r-hora">Hora</label>
+                <select id="r-hora"></select>
+              </div>
+              <div class="campo campo-doble">
+                <label for="r-nombre">A nombre de</label>
+                <input id="r-nombre" type="text" autocomplete="given-name" maxlength="40" placeholder="Tu nombre">
+              </div>
+              <div class="campo campo-doble">
+                <label for="r-comentario">Comentario <small>(opcional)</small></label>
+                <input id="r-comentario" type="text" maxlength="140" placeholder="Por ejemplo: es un cumpleaños">
+              </div>
+            </div>
+            <p class="error" id="r-error" aria-live="polite"></p>
+            <button type="submit" class="btn btn-oscuro btn-ancho">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Enviar reserva por WhatsApp
+            </button>
+            <p class="nota-chica">La mesa queda confirmada cuando el local te responde.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- EL LUGAR -->
+    <section id="lugar" class="seccion lugar">
+      <div class="contenedor">
+        <header class="cab-seccion">
+          <div>
+            <h2>El lugar</h2>
+            <p>Salón con mesas de madera, patio cerrado y terraza al frente. Da para un café de paso, una merienda larga o una cena con amigos.</p>
+          </div>
+        </header>
+        <div class="lugar-in">
+          <div class="fotos">
+            <button type="button" class="foto f-a" data-src="img/fachada.jpg" data-pie="El frente, sobre Av. del Coral">
+              <img src="img/fachada.jpg" alt="Frente de La Cachila con el cartel Multiespacio Café Resto" loading="lazy" width="848" height="866">
+              <span>El frente</span>
+            </button>
+            <button type="button" class="foto f-b" data-src="img/patio.jpg" data-pie="El patio cerrado">
+              <img src="img/patio.jpg" alt="Patio cerrado con mesas blancas y sillas negras" loading="lazy" width="1409" height="744">
+              <span>El patio</span>
+            </button>
+            <button type="button" class="foto f-c" data-src="img/postres.jpg" data-pie="Tortas y postres">
+              <img src="img/postres.jpg" alt="Bandeja con porciones de torta" loading="lazy" width="588" height="922">
+              <span>Tortas del día</span>
+            </button>
+            <button type="button" class="foto f-d" data-src="img/desayuno.jpg" data-pie="Medialunas rellenas">
+              <img src="img/desayuno.jpg" alt="Medialunas rellenas de jamón y queso y croissant relleno" loading="lazy" width="483" height="793">
+              <span>Para la mañana</span>
+            </button>
+          </div>
+          <aside class="cartel">
+            <p class="cartel-chico">Algunos fines de semana</p>
+            <h3 class="cartel-titulo">Noches de karaoke</h3>
+            <p class="cartel-txt">Show con conducción y premios a la mejor mesa. Las próximas fechas se anuncian en Instagram.</p>
+            <div class="cartel-links">
+              <a href="https://www.instagram.com/lacachilacaferesto/" target="_blank" rel="noopener">Ver próximas fechas en Instagram</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO LLEGAR -->
+    <section id="visita" class="seccion visita">
+      <div class="contenedor">
+        <header class="cab-seccion">
+          <div>
+            <h2>Cómo llegar</h2>
+            <p>Av. del Coral 38, Marindia. A la altura del km 41 de la Interbalnearia.</p>
+          </div>
+        </header>
+        <div class="visita-in">
+          <div class="mapa">
+            <iframe title="Mapa de La Cachila en Marindia" src="https://www.google.com/maps?q=-34.7722352,-55.8192362&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="visita-info">
+            <h3>Horarios</h3>
+            <ul class="horarios" id="tabla-horarios"></ul>
+            <div class="visita-acciones">
+              <a class="btn btn-mostaza btn-ancho" href="https://www.google.com/maps/dir/?api=1&amp;destination=La%20Cachila%20Marindia&amp;destination_place_id=ChIJRZQQDAD1n5URjC7FeRCLLl0" target="_blank" rel="noopener">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ruta"/></svg>Cómo llegar
+              </a>
+              <a class="btn btn-borde btn-ancho" href="https://search.google.com/local/writereview?placeid=ChIJRZQQDAD1n5URjC7FeRCLLl0" target="_blank" rel="noopener">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-estrella"/></svg>Calificanos en Google
+              </a>
+            </div>
+            <a class="link-ruta" href="https://www.google.com/maps/search/?api=1&amp;query=La%20Cachila&amp;query_place_id=ChIJRZQQDAD1n5URjC7FeRCLLl0" target="_blank" rel="noopener">Leer las reseñas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="seccion contacto">
+      <div class="contenedor contacto-in">
+        <div class="contacto-txt">
+          <header class="cab-seccion">
+            <div>
+              <h2>Escribinos</h2>
+              <p>Para festejos, grupos grandes o cualquier consulta. Si es una reserva o un pedido, por WhatsApp es más rápido.</p>
+            </div>
+          </header>
+          <ul class="canales">
+            <li><a data-wa="Hola La Cachila, tengo una consulta."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span><em>Reservas y pedidos</em></a></li>
+            <li><a data-tel><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tel"/></svg><span>Llamar</span><em data-tel-texto>096 651 131</em></a></li>
+            <li><a href="https://www.instagram.com/lacachilacaferesto/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span><em>@lacachilacaferesto</em></a></li>
+          </ul>
+        </div>
+
+        <form id="form-contacto" class="form" novalidate>
+          <input type="checkbox" name="botcheck" class="oculto" tabindex="-1" autocomplete="off" style="display:none">
+          <div class="form-fila">
+            <div class="campo">
+              <label for="f-nombre">Nombre</label>
+              <input id="f-nombre" name="Nombre" type="text" autocomplete="given-name" maxlength="40" required>
+              <span class="error" data-error-de="Nombre" aria-live="polite"></span>
+            </div>
+            <div class="campo">
+              <label for="f-apellido">Apellido</label>
+              <input id="f-apellido" name="Apellido" type="text" autocomplete="family-name" maxlength="40" required>
+              <span class="error" data-error-de="Apellido" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="form-fila">
+            <div class="campo">
+              <label for="f-correo">Correo electrónico</label>
+              <input id="f-correo" name="Correo electrónico" type="email" autocomplete="email" maxlength="80" required>
+              <span class="error" data-error-de="Correo electrónico" aria-live="polite"></span>
+            </div>
+            <div class="campo">
+              <label for="f-tel">Teléfono</label>
+              <input id="f-tel" name="Teléfono" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="099 123 456" required>
+              <span class="error" data-error-de="Teléfono" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="f-tipo">Tipo de consulta</label>
+            <select id="f-tipo" name="Tipo de consulta" required>
+              <option value="">Elegí una opción</option>
+              <option>Festejo o grupo grande</option>
+              <option>Reserva de mesa</option>
+              <option>Pedido para llevar</option>
+              <option>Shows y karaoke</option>
+              <option>Otra consulta</option>
+            </select>
+            <span class="error" data-error-de="Tipo de consulta" aria-live="polite"></span>
+          </div>
+          <div class="campo">
+            <label for="f-mensaje">Mensaje</label>
+            <textarea id="f-mensaje" name="Mensaje" rows="4" maxlength="1000" required></textarea>
+            <div class="campo-pie">
+              <span class="error" data-error-de="Mensaje" aria-live="polite"></span>
+              <span class="contador-txt" id="contador-mensaje">0 / 1000</span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-oscuro btn-ancho">Enviar consulta</button>
+          <p class="form-estado" id="form-estado" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer-in">
+      <img class="footer-logo" src="img/logo.png" alt="La Cachila" width="316" height="199" loading="lazy">
+      <div>
+        <h4>Dónde</h4>
+        <p>Av. del Coral 38<br>Marindia, Canelones</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p><a data-tel>096 651 131</a><br><a data-wa="Hola La Cachila, tengo una consulta.">WhatsApp</a><br><a href="https://www.instagram.com/lacachilacaferesto/" target="_blank" rel="noopener">Instagram</a></p>
+      </div>
+      <div>
+        <h4>Hoy</h4>
+        <p data-hoy-footer>—</p>
+      </div>
+    </div>
+    <div class="contenedor footer-base">© <span id="anio">2026</span> La Cachila · Multiespacio Café Resto</div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a class="wa-flotante" data-wa="Hola La Cachila, tengo una consulta." aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+
+  <!-- Barra del pedido -->
+  <div class="pedido-barra" id="pedido-barra">
+    <button type="button" id="pedido-ver">
+      <span class="pb-cant" id="pedido-cant">0</span>
+      <span class="pb-txt">Tu pedido</span>
+      <span class="pb-ver">Ver pedido</span>
+    </button>
+  </div>
+
+  <!-- Panel del pedido -->
+  <div class="pedido" id="pedido" hidden>
+    <div class="pedido-fondo"></div>
+    <aside class="pedido-caja" role="dialog" aria-modal="true" aria-labelledby="pedido-titulo">
+      <div class="pedido-cab">
+        <h2 id="pedido-titulo">Tu pedido para retirar</h2>
+        <button type="button" id="pedido-cerrar" aria-label="Cerrar">×</button>
+      </div>
+      <ul class="pedido-lista" id="pedido-lista"></ul>
+      <p class="pedido-ref" id="pedido-ref" data-solo-precios></p>
+      <form id="pedido-form" class="pedido-form" novalidate>
+        <div class="campo">
+          <label for="pedido-nombre">A nombre de</label>
+          <input id="pedido-nombre" type="text" autocomplete="given-name" maxlength="40" placeholder="Tu nombre">
+          <span class="error" id="pedido-nombre-error" aria-live="polite"></span>
+        </div>
+        <p class="pedido-aviso">Por ahora es solo para <strong>retirar en el local</strong>. La hora de retiro y el pago se coordinan por WhatsApp.</p>
+        <div class="campo">
+          <label for="pedido-nota">Aclaración <small>(opcional)</small></label>
+          <input id="pedido-nota" type="text" maxlength="140" placeholder="Por ejemplo: la carne a punto">
+        </div>
+        <button type="submit" class="btn btn-oscuro btn-ancho">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Enviar pedido por WhatsApp
+        </button>
+        <button type="button" class="link-boton" id="pedido-vaciar">Vaciar el pedido</button>
+      </form>
+    </aside>
+  </div>
+
+  <!-- Visor de fotos -->
+  <dialog id="visor" class="visor" aria-label="Foto ampliada">
+    <figure><img src="" alt=""><figcaption></figcaption></figure>
+    <button type="button" class="visor-cerrar" aria-label="Cerrar">×</button>
+    <button type="button" class="visor-ant" aria-label="Foto anterior">‹</button>
+    <button type="button" class="visor-sig" aria-label="Foto siguiente">›</button>
+  </dialog>
+
+  <!-- Íconos -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.24 8.24 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29Z"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-ruta" viewBox="0 0 24 24"><path d="m3 11 18-8-8 18-2-8-8-2Z"/></symbol>
+    <symbol id="i-estrella" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9L12 3Z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></symbol>
+  </svg>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
